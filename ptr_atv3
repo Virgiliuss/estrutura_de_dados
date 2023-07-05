@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(){
+
+    int vet[6];
+    int i = 0;
+    int *pt1;
+    pt1 = vet;
+
+    setlocale(LC_ALL, "Portuguese");
+
+    while(i < 6){
+
+        printf("Informe o %dº número: ", i+1);
+        scanf("%d", &vet[i]);
+        i++;
+    }
+
+    printf("\nValores do vetor: ");
+
+     for (i=0; i < 6; i++){
+        printf("\nVet[%d] = %d    ptr = %d", i, vet[i], *pt1); // o conteudo do vetor acessado pela variavel e pelo ponteiro
+        pt1++;
+     }
+
+    printf("\n\nEndereços de memórias: ");
+
+    for (i=0; i < 6; i++){
+        printf("\nVet[%d] = %d    ptr = %d", i, vet[i], pt1); // o conteudo do vetor acessado pela variavel e pelo ponteiro
+        pt1++;
+     }
+
+     printf("\n");
+
+    return 0;
+}
