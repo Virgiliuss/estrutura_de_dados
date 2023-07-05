@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int soma(int *a, int *b){
+    int somat = *a + *b;
+    printf("\nA soma eh: %d\n", somat);
+}
+
+int sub(int *a, int *b){
+    int subt = *a - *b;
+    printf("A subtracao eh: %d\n", subt);
+}
+
+int mult(int *a, int *b){
+    int mult = *a * *b;
+    printf("A multiplicacao eh: %d\n", mult);
+}
+
+void divisao(int *a, int *b){
+    double divi = (double) (*a) / (*b);
+    printf("A divisao eh: %.2f\n", divi);
+}
+
+int main(){
+
+    int a, b;
+    int *pt1 = &a, *pt2 = &b;
+
+    printf("Informe o 1 numero: ");
+    scanf("%d", pt1);
+    printf("Informe o 2 numero: ");
+    scanf("%d", pt2);
+
+    soma(pt1, pt2);
+    sub(pt1, pt2);
+    mult(pt1, pt2);
+    divisao(pt1, pt2);
+
+    return 0;
+}
