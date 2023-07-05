@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void mostra_frase(char *frase){
+
+    char *ptr = frase;
+
+    while (*ptr != '\0') {
+        while (*ptr == ' ') {
+            ptr++;
+        }
+
+        if (*ptr == '\0') {
+            break;
+        }
+
+        while (*ptr != ' ' && *ptr != '\0') {
+            printf("%c", *ptr);
+            ptr++;
+        }
+
+        printf("\n");
+    }
+}
+
+int main()
+{
+    char frase[60];
+
+    printf("digite uma frase: ");
+    fgets(frase, 50, stdin);
+
+    mostra_frase(frase);
+
+    return 0;
+}
