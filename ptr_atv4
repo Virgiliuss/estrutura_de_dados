@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    int vet[4];
+    int i;
+    int *ptr = vet;
+    int maior = *ptr;
+    int menor = *ptr;
+
+    setlocale(LC_ALL, "Portuguese");
+    printf("4 valores devem ser informados\n\n");
+
+    for (i = 0; i < 4; i++) {
+        printf("Informe o %dº valor: ", i+1);
+        scanf("%d", ptr);
+        ptr++;
+    }
+
+    ptr = vet;
+
+    printf("\nValor do vetor: ");
+
+    for (i = 0; i < 4; i++) {
+        printf("%d ", *ptr);
+        ptr++;
+    }
+
+    printf("\nValor do End. de memória: ");
+
+    for (i = 0; i < 4; i++) {
+        printf("%d ", ptr);
+        ptr++;
+    }
+
+    ptr = vet;
+    maior = *ptr;
+
+     for (i = 0; i < 4; i++) {
+        if (*ptr > maior) {
+            maior = *ptr;
+        }
+        if (*ptr < menor) {
+            menor = *ptr;
+        }
+        ptr++;
+    }
+
+    printf("\nMaior valor do vetor: %d\n", maior);
+    printf("Menor valor do vetor: %d\n", menor);
+
+    return 0;
+}
