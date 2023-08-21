@@ -1,4 +1,9 @@
 # estrutura_de_dados
-Atividades da faculdade relacionadas à Estrutura de Dados utilizando a linguagem de programação C.
+Atividades relacionadas à Estrutura de Dados utilizando a linguagem de programação C.
 
-As seguintes atividades são relacionadas ao conteúdo de ponteiros.
+As atividades abaixos são relacionadas aos seguintes conteúdos:
+
+  - Ponteiros;
+  - Structs e TAD (Tipo Abstrato de Dados);
+  - Pilha;
+  - Fila.
