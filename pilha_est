@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct pilha{
+    int item;
+}pilha;
+
+int topo = -1;
+
+void incrementaPilha(pilha p[5], int item){
+    if (topo >= 4){
+        printf("Pilha cheia!");
+    }else{
+        topo++;
+        p[topo].item = item;
+    }
+}
+
+void decrementaPilha(pilha p[5]){
+    p[topo].item = 0;
+    topo --;
+}
+
+int main(){
+    pilha p[5];
+    int resp = 0, item = 0;
+
+    while (resp != 3){
+        printf("Escolha a opcao:\n");
+        printf("1- Incrementar pilha\n2- Decrementar pilha\n3- Sair\n\n");
+        scanf("%d", &resp);
+
+        switch(resp){
+        case 1:
+            if(topo >= 4){
+                printf("Pilha cheia!");
+            }
+
+            printf("Item a ser inserido: ");
+            scanf("%d", &item);
+            incrementaPilha(p, item);
+            printf("\nTopo = %d\n", topo);
+            break;
+        case 2:
+            if (topo < 1)
+            {
+                printf("\nPilha vazia\n");
+                break;
+            }
+
+            decrementaPilha(p);
+            printf("\nTopo = %d\n",topo);
+            break;
+        }
+    }
+
+    return 0;
+}
