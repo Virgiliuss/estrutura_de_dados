@@ -1,4 +1,4 @@
-# estrutura_de_dados
+# Estrutura de Dados
 Atividades relacionadas à Estrutura de Dados utilizando a linguagem de programação C.
 
 As atividades abaixos são relacionadas aos seguintes conteúdos:
