@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+typedef struct {
+    int item;
+}FilaItem;
+
+int inicio_fila = 0;
+int fila_fim = -1;
+
+void enfileira_fila(FilaItem f[5], int item) {
+    if (fila_fim >= 4) {
+        printf("Fila cheia!\n");
+    } else {
+        fila_fim++;
+        f[fila_fim].item = item;
+    }
+}
+
+void desenfileira_fila(FilaItem f[5]) {
+    if (inicio_fila <= fila_fim) {
+        f[inicio_fila].item = 0;
+        inicio_fila++;
+    } else {
+        printf("Fila vazia!\n");
+    }
+}
+
+void consulta_fila(FilaItem f[5]) {
+    printf("Itens da fila:\n");
+    for (int i = inicio_fila; i <= fila_fim; i++) {
+        printf("%d\n", f[i].item);
+    }
+}
+
+int main() {
+    FilaItem f[5]; // Vetor para armazenar a fila
+    int resp, item;
+
+    setlocale(LC_ALL, "Portuguese");
+
+    while (resp != 5) {
+        printf("\nEscolha uma opção:\n");
+        printf("1 - Enfileirar Item\n2 - Desenfileirar Item\n3 - Consultar Fila\n4 - Excluir Fila\n5 - Sair\n");
+        scanf("%d", &resp);
+
+        switch (resp) {
+            case 1:
+                if (fila_fim >= 4) {
+                    printf("Fila cheia!\n");
+                } else {
+                    printf("Item a ser inserido na fila: ");
+                    scanf("%d", &item);
+                    enfileira_fila(f, item);
+                }
+                break;
+            case 2:
+                desenfileira_fila(f);
+                break;
+            case 3:
+                consulta_fila(f);
+                break;
+            case 4:
+                inicio_fila = 0;
+                fila_fim = -1;
+                printf("Fila excluída!\n");
+                break;
+            case 5:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida.\n");
+        }
+    }
+
+    return 0;
+}
+
